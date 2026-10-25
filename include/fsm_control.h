@@ -1,15 +1,16 @@
 #pragma once
+
 #include <Arduino.h>
 
 enum class State : uint8_t {
-    IDLE,
+    IDLE = 0,
     RUNNING,
     FAULT,
     COUNT
 };
 
 enum class Event : uint8_t {
-    NONE,
+    NONE = 0,
     START,
     BTN_PRESS,
     RESET,
@@ -17,5 +18,9 @@ enum class Event : uint8_t {
 };
 
 void fsmInit();
+void dispatchEvent(Event event);
+
 State getCurrentState();
-void dispatchEvent(Event ev);
+
+const char* stateToString(State state);
+const char* eventToString(Event event);

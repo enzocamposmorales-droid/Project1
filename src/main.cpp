@@ -13,13 +13,18 @@ void setup()
     fsmInit();
 
     Serial.println("Sistema inicializado");
+
+    // Por ahora arrancamos automáticamente
+    dispatchEvent(Event::START);
 }
 
 void loop()
 {
     if (fetchEmergencyEvent())
     {
-        Serial.print("Paro de emergencia detectado. Pulsaciones: ");
+        dispatchEvent(Event::BTN_PRESS);
+
+        Serial.print("Pulsaciones validas: ");
         Serial.println(fetchButtonPressCount());
     }
 }
