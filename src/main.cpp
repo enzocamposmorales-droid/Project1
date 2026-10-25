@@ -4,7 +4,8 @@
 #include "fsm_control.h"
 #include "isr_button.h"
 
-void setup() {
+void setup()
+{
     Serial.begin(115200);
 
     motorInit();
@@ -14,5 +15,11 @@ void setup() {
     Serial.println("Sistema inicializado");
 }
 
-void loop() {
+void loop()
+{
+    if (fetchEmergencyEvent())
+    {
+        Serial.print("Paro de emergencia detectado. Pulsaciones: ");
+        Serial.println(fetchButtonPressCount());
+    }
 }
