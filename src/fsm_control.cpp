@@ -47,7 +47,7 @@ static void handleReset()
 
 static void handleInvalid()
 {
-    // Evento no válido para el estado actual
+    Serial.println("[FSM] Transicion no permitida");
 }
 
 
