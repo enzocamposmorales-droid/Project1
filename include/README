@@ -35,3 +35,10 @@ Read more about using header files in official GCC documentation:
 * Computed Includes
 
 https://gcc.gnu.org/onlinedocs/cpp/Header-Files.html
+
+
+## Documentación
+
+El marco teórico y la justificación técnica del proyecto se encuentran en:
+
+[Ver marco teórico](documentacion/marco_teorico.md)
